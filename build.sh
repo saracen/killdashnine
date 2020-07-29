@@ -1,5 +1,6 @@
 #!/bin/bash
 
+export TEST_DIR=/mnt/data
 apt-get update
 apt-get install -y fio
 mkdir -p $TEST_DIR
