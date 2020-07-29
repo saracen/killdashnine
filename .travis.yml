@@ -4,5 +4,5 @@ jobs:
   include:
     - stage: build
       script:
-        - ./build.sh
+        - sudo ./build.sh
 
