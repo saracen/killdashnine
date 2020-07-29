@@ -1,8 +1,8 @@
 version: 2.1
 jobs:
   build:
-    docker: 
-      - image: ubuntu:bionic
+    machine: 
+      - image: cimg/base:2020.01
     steps:
       - checkout
-      - run: ./build.sh
+      - run: sudo ./build.sh
