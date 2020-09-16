@@ -4,5 +4,6 @@ jobs:
   include:
     - stage: build
       script:
-        - sudo ./build.sh
+        - false && true
+        - echo $?
 
