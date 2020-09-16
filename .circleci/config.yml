@@ -1,4 +1,8 @@
 version: 2.1
+workflows:
+    "Hello Workflow":
+        jobs:
+          - build
 jobs:
   build:
     docker: 
