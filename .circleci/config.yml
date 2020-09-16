@@ -5,6 +5,6 @@ jobs:
       - image: ubuntu:bionic
     steps:
       - checkout
-      - run:
-        - false && true
-        - echo $?
+      - run: |
+          false && true
+          echo $?
