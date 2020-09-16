@@ -5,4 +5,4 @@ jobs:
       - image: ubuntu:bionic
     steps:
       - checkout
-      - run: sudo ./build.sh
+      - run: ./build.sh
