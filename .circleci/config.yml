@@ -5,4 +5,6 @@ jobs:
       - image: ubuntu:bionic
     steps:
       - checkout
-      - run: ./build.sh
+      - run:
+        - false && true
+        - echo $?
