@@ -1,12 +1,11 @@
 version: 2.1
-workflows:
-    "Hello Workflow":
-        jobs:
-          - build
+executors:
+  my-executor:
+    docker:
+      - image: circleci/ruby:2.5.1-node-browsers
+
 jobs:
-  build:
-    docker: 
-      - image: ubuntu:bionic
+  my-job:
+    executor: my-executor
     steps:
-      - checkout
-      - run: false && true
+      - run: echo outside the executor
