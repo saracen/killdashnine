@@ -1,11 +1,8 @@
 version: 2.1
-executors:
-  my-executor:
-    docker:
-      - image: circleci/ruby:2.5.1-node-browsers
-
 jobs:
-  my-job:
-    executor: my-executor
+  build:
+    docker: 
+      - image: ubuntu:bionic
     steps:
-      - run: echo outside the executor
+      - checkout
+      - run: sudo ./build.sh
