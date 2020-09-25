@@ -3,6 +3,7 @@ jobs:
   build:
     docker: 
       - image: debian:latest
+    resource_class: small
     steps:
       - checkout
       - run: |
