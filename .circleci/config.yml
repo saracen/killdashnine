@@ -2,9 +2,12 @@ version: 2.1
 jobs:
   build:
     docker: 
-      - image: ubuntu:bionic
+      - image: debian:latest
     steps:
       - checkout
       - run: |
-          false && true
-          echo $?
+         apt-get update && apt install -y build-essential git bc kmod cpio flex cpio libncurses5-dev bison libssl-dev libelf-dev
+         git clone --depth 1 --branch v5.3-rc3 https://github.com/torvalds/linux.git linux.git
+         cp .config linux.git/.config
+         cd linux.git
+         make -j2 vmlinux
