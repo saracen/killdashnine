@@ -6,8 +6,8 @@ jobs:
     steps:
       - checkout
       - run: |
-         apt-get update && apt install -y build-essential git bc kmod cpio flex cpio libncurses5-dev bison libssl-dev libelf-dev
+         apt-get update && apt install -y build-essential git bc kmod cpio flex cpio libncurses5-dev bison libssl-dev libelf-dev curl
          git clone --depth 1 --branch v5.3-rc3 https://github.com/torvalds/linux.git linux.git
-         cp .config linux.git/.config
+         curl https://gist.githubusercontent.com/slp/1060ba3aaf708584572ad4109f28c8f9/raw/d375989a1b99417b6d3311eee418937eba62184a/linux_microvm_v3.config -o .config
          cd linux.git
          make -j2 vmlinux
