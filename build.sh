@@ -1,3 +1,4 @@
+dmesg
 apt-get update
 apt-get install -y fio sysbench
 export TEST_DIR=/mnt
